@@ -37,11 +37,11 @@ public class UserServiceImplementation implements UserService {
 		}
 		//username exists in db
 		else {
-			String dbPassword = u.getPassword();
+			String dbPassword = u.getPassword();// Db Password
 			//valid credentials
 			if(webPassword.equals(dbPassword)) {
 				String role = u.getRole();
-				if(role.equalsIgnoreCase("admin"))
+				if(role.equalsIgnoreCase("admin")) // Admin Page
 					return "Admin User";
 				else
 					return "Customer User";
