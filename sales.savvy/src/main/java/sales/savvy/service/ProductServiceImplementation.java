@@ -9,20 +9,14 @@ import sales.savvy.entity.Product;
 import sales.savvy.repository.ProductRepository;
 
 @Service
-public class ProductServiceImplemention implements ProductService {
-	
+public class ProductServiceImplementation 
+			implements ProductService {
 	@Autowired
 	ProductRepository repo;
 
 	@Override
-	public void addProduct(Product product) { // Add Product
-		repo.save(product);
-		
-	}
-
-	@Override
-	public List<Product> getAllProducts() { // get All Product
-		return repo.findAll();
+	public void addProduct(Product prod) {
+		repo.save(prod);
 	}
 
 	@Override
@@ -31,9 +25,13 @@ public class ProductServiceImplemention implements ProductService {
 	}
 
 	@Override
-	public void updateProduct(Product product) {
-		repo.save(product);
-		
+	public List<Product> getAllProducts() {
+		return repo.findAll();
+	}
+
+	@Override
+	public void updateProduct(Product prod) {
+		repo.save(prod);
 	}
 
 	@Override
